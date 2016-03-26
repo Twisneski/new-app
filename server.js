@@ -31,6 +31,12 @@ app.get('/actual', (req, res) => {
   });
 });
 
+app.get('/report', (req, res) => {
+  res.render('report', {
+    title:  'Reports'
+  });
+});
+
 app.use('/newLease',stormpath.loginRequired,require('./newLease')());
 
 app.on('stormpath.ready',function(){

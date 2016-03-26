@@ -4,26 +4,22 @@ html
     link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet')
   body
     div.container
-      div.jumbotron
-        h1 Hello!
+      div.page-header
+        h1 Reports
 
-        if user
-          p Welcome, #{user.fullName}
-          p
-            a.small(href="profile") Edit my profile
-          form(action='/logout', method='POST')
-            button.btn.btn-default(type="submit") Logout
-          form(action='/newLease', method='POST')
-            button.btn.btn-default(type="submit") New Lease
-          form(action='/report', method='POST')
-            button.btn.btn-default(type="submit") Reports
-          form(action='/budget', method='POST')
-            button.btn.btn-default(type="submit") Budget
-        else
-          p Welcome to Lease Controls.
-          p
-            a.btn.btn-primary(href="/login") Login now
-          p
-            span.small Don't have an account?
-            span &nbsp;
-            a.small(href="/register") Register now
+        div.btn-toolbar(role='toolbar', aria-label='selectReport')
+          h3 Select Report
+        form(action='/newLease', method='POST')
+          button.btn-group(role='group', aria-label='budVsActual') Budget vs. Actual
+        form(action='/report', method='POST')
+          button.btn-group(role='group', aria-label='leaseInfo') Lease Information
+        form(action='/budget', method='POST')
+          button.btn-group(role='group', aria-label='leaseBuilding') Lease by Building
+        form(action='/actual', method='POST')
+          button.btn-group(role='group', aria-label='leaseProject') Lease by Project
+
+      div.form-group
+        div.col-sm-offset-4.col-sm-8
+        div.pull-right
+          a(href="/") Return to home page
+
