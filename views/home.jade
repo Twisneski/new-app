@@ -16,11 +16,11 @@ html
           div.btn-toolbar(role='toolbar', aria-label='selectPage') Select Page
           form(action='/newLease', method='POST')
             button.btn-group(role='group', aria-label='newLease') New Lease
-          form(action='/report', method='POST')
+          form(action='/report', method='GET')
             button.btn-group(role='group', aria-label='report') Reports
-          form(action='/budget', method='POST')
+          form(action='/budget', method='GET')
             button.btn-group(role='group', aria-label='budget') Budget
-          form(action='/actual', method='POST')
+          form(action='/actual', method='GET')
             button.btn-group(role='group', aria-label='actual') Actual Cam Amounts
 
         else

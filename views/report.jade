@@ -9,13 +9,13 @@ html
 
         div.btn-toolbar(role='toolbar', aria-label='selectReport')
           h3 Select Report
-        form(action='/newLease', method='POST')
+        form(action='/newLease', method='GET')
           button.btn-group(role='group', aria-label='budVsActual') Budget vs. Actual
-        form(action='/report', method='POST')
+        form(action='/report', method='GET')
           button.btn-group(role='group', aria-label='leaseInfo') Lease Information
-        form(action='/budget', method='POST')
+        form(action='/budget', method='GET')
           button.btn-group(role='group', aria-label='leaseBuilding') Lease by Building
-        form(action='/actual', method='POST')
+        form(action='/actual', method='GET')
           button.btn-group(role='group', aria-label='leaseProject') Lease by Project
 
       div.form-group
