@@ -1,0 +1,29 @@
+html
+  head
+    title=title
+    link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet')
+  body
+    div.container
+      div.jumbotron
+        h1 Hello!
+
+        if user
+          p Welcome, #{user.fullName}
+          p
+            a.small(href="profile") Edit my profile
+          form(action='/logout', method='POST')
+            button.btn.btn-default(type="submit") Logout
+          form(action='/newLease', method='POST')
+            button.btn.btn-default(type="submit") New Lease
+          form(action='/report', method='POST')
+            button.btn.btn-default(type="submit") Reports
+          form(action='/budget', method='POST')
+            button.btn.btn-default(type="submit") Budget
+        else
+          p Welcome to Lease Controls.
+          p
+            a.btn.btn-primary(href="/login") Login now
+          p
+            span.small Don't have an account?
+            span &nbsp;
+            a.small(href="/register") Register now

@@ -1,0 +1,189 @@
+html
+  head
+    title=title
+    link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet')
+  body
+    div.container
+      div.page-header
+        h1 Actual CAM Amounts
+
+      if errors
+        each error in errors
+          div.alert.alert-danger
+            span #{error.error}
+      if saved
+        div.alert.alert-success
+          span Your new Cam amounts have been saved
+      form.login-form.form-horizontal(method='post', role='form')
+      input(name='_csrf', type='hidden', value=csrfToken)
+
+      div.form-group
+          label.col-sm-4 Janitorial
+          div.col-sm-8
+            input.form-control(
+              placeholder='Janitorial',
+              required=true,
+              name='janitorial',
+              type='number',
+              value=janitorial)
+      div.form-group
+          label.col-sm-4 Grounds Maintenance
+          div.col-sm-8
+            input.form-control(
+              placeholder='Grounds Maintenance',
+              required=true,
+              name='grounds',
+              type='number',
+              value=grounds)
+      div.form-group
+          label.col-sm-4 Janitorial
+          div.col-sm-8
+            input.form-control(
+              placeholder='Janitorial',
+              required=true,
+              name='janitorial',
+              type='number',
+              value=janitorial)
+      div.form-group
+          label.col-sm-4 Utility - Electric
+          div.col-sm-8
+            input.form-control(
+              placeholder='Electric',
+              required=true,
+              name='electric',
+              type='number',
+              value=electric)
+      div.form-group
+          label.col-sm-4 Utility - Gas
+          div.col-sm-8
+            input.form-control(
+              placeholder='Gas',
+              required=true,
+              name='gas',
+              type='number',
+              value=gas)
+      div.form-group
+          label.col-sm-4 Utility - Water/Sewer
+          div.col-sm-8
+            input.form-control(
+              placeholder='Water/Sewer',
+              required=true,
+              name='water',
+              type='number',
+              value=water)
+      div.form-group
+          label.col-sm-4 Leasehold Improvements
+          div.col-sm-8
+            input.form-control(
+              placeholder='Leasehold Improvements',
+              required=true,
+              name='leashold',
+              type='number',
+              value=leasehold)
+      div.form-group
+          label.col-sm-4 Security
+          div.col-sm-8
+            input.form-control(
+              placeholder='Security',
+              required=true,
+              name='security',
+              type='number',
+              value=security)
+      div.form-group
+          label.col-sm-4 Snow Removal
+          div.col-sm-8
+            input.form-control(
+              placeholder='Snow Removal',
+              required=true,
+              name='snow',
+              type='number',
+              value=snow)
+      div.form-group
+          label.col-sm-4 Management Fee
+          div.col-sm-8
+            input.form-control(
+              placeholder='Management Fee',
+              required=true,
+              name='mgtFee',
+              type='number',
+              value=mgtFee)
+      div.form-group
+          label.col-sm-4 Plumbing
+          div.col-sm-8
+            input.form-control(
+              placeholder='Plumbing',
+              required=true,
+              name='plumbing',
+              type='number',
+              value=plumbing)
+      div.form-group
+          label.col-sm-4 Trash
+          div.col-sm-8
+            input.form-control(
+              placeholder='Trash',
+              required=true,
+              name='trash',
+              type='number',
+              value=trash)
+      div.form-group
+          label.col-sm-4 Elevator
+          div.col-sm-8
+            input.form-control(
+              placeholder='Elevator',
+              required=true,
+              name='elevator',
+              type='number',
+              value=elevator)
+      div.form-group
+          label.col-sm-4 HVAC
+          div.col-sm-8
+            input.form-control(
+              placeholder='HVAC',
+              required=true,
+              name='hvac',
+              type='number',
+              value=hvac)
+      div.form-group
+          label.col-sm-4 Maintenance Supplies
+          div.col-sm-8
+            input.form-control(
+              placeholder='Maintenance Supplies',
+              required=true,
+              name='supplies',
+              type='number',
+              value=supplies)
+      div.form-group
+          label.col-sm-4 Fire Alarm
+          div.col-sm-8
+            input.form-control(
+              placeholder='Fire Alarm',
+              required=true,
+              name='fireAlarm',
+              type='number',
+              value=fireAlarm)
+      div.form-group
+          label.col-sm-4 Insurance
+          div.col-sm-8
+            input.form-control(
+              placeholder='Insurance',
+              required=true,
+              name='insurance',
+              type='number',
+              value=insurance)
+      div.form-group
+          label.col-sm-4 Taxes
+          div.col-sm-8
+            input.form-control(
+              placeholder='Taxes',
+              required=true,
+              name='taxes',
+              type='number',
+              value=taxes)
+      div.form-group
+          div.col-sm-offset-4.col-sm-8
+            button.login.btn.btn-primary(type='submit') Save
+        div.pull-right
+          a(href="/") Return to home page
+
+
+

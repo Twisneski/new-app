@@ -1,0 +1,208 @@
+html
+  head
+    title=title
+    link(
+      href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css',
+      rel='stylesheet'
+    )
+  body
+    div.container
+
+      div.page-header
+        h1 New Lease
+
+      if errors
+        each error in errors
+          div.alert.alert-danger
+            span #{error.error}
+      if saved
+        div.alert.alert-success
+          span Your new Lease has been saved
+      form.login-form.form-horizontal(method='post', role='form')
+        input(name='_csrf', type='hidden', value=csrfToken)
+
+        div.form-group
+          label.col-sm-4 Building Id
+          div.col-sm-8
+            input.form-control(
+              placeholder='Building Id',
+              required=true,
+              name='building',
+              type='text',
+              value=building)
+        div.form-group
+          label.col-sm-4 Building Name
+          div.col-sm-8
+            input.form-control(
+              placeholder='Building Name',
+              required=true,
+              name='buildingName',
+              type='text',
+              value=buildingName)
+        div.form-group
+          label.col-sm-4 Project
+          div.col-sm-8
+            input.form-control(placeholder='Project',
+              required=true,
+              name='project',
+              type='text',
+              value=project)
+        div.form-group
+          label.col-sm-4 Unit
+          div.col-sm-8
+            input.form-control(placeholder='Unit',
+              required=true,
+              name='Unit',
+              type='text',
+              value=unit)
+        div.form-group
+          label.col-sm-4 Unit Square Footage
+          div.col-sm-8
+            input.form-control(placeholder='e.g. 500',
+              required=true,
+              name='unitSqFoot',
+              type='number',
+              value=unitSqFoot)
+        div.form-group
+          label.col-sm-4 Building Square Footage
+          div.col-sm-8
+            input.form-control(placeholder='e.g. 10000',
+              required=true,
+              name='buildingSqFoot',
+              type='number',
+              value=buildingSqFoot)
+        div.form-group
+          label.col-sm-4 Physical address
+          div.col-sm-8
+            input.form-control(placeholder='e.g. 123 Main',
+              required=true,
+              name='zip',
+              type='text',
+              value=zip)
+        div.form-group
+          label.col-sm-4 City
+          div.col-sm-8
+            input.form-control(placeholder='e.g. Cityville',
+              required=true,
+              name='city',
+              type='text',
+              value=city)
+        div.form-group
+          label.col-sm-4 State
+          div.col-sm-8
+            input.form-control(placeholder='e.g. Tennessee',
+              required=true,
+              name='state',
+              type='text',
+              value=state)
+        div.form-group
+          label.col-sm-4 Zip
+          div.col-sm-8
+            input.form-control(placeholder='e.g. 12345',
+              required=true,
+              name='zip',
+              type='number',
+              value=zip)
+        div.form-group
+          label.col-sm-4 Tenant Id
+          div.col-sm-8
+            input.form-control(placeholder='Tenant Id',
+              required=true,
+              name='tenantId',
+              type='number',
+              value=tenantId)
+        div.form-group
+          label.col-sm-4 Tenant Name
+          div.col-sm-8
+            input.form-control(placeholder='Tenant Name',
+              required=true,
+              name='tenantName',
+              type='number',
+              value=tenantName)
+        div.form-group
+          label.col-sm-4 Lease Id
+          div.col-sm-8
+            input.form-control(placeholder='Lease Id',
+              required=true,
+              name='LeaseId',
+              type='number',
+              value=LeaseId)
+        div.form-group
+          label.col-sm-4 Move In Date
+          div.col-sm-8
+            input.form-control(placeholder='e.g. 01/01/000',
+              required=true,
+              name='moveIn',
+              type='date',
+              value=moveIn)
+        div.form-group
+          label.col-sm-4 Move Out Date
+          div.col-sm-8
+            input.form-control(placeholder='e.g. 01/01/000',
+              required=true,
+              name='moveOut',
+              type='date',
+              value=moveOut)
+        div.form-group
+          label.col-sm-4 Lease Start Date
+          div.col-sm-8
+            input.form-control(placeholder='e.g. 01/01/000',
+              required=true,
+              name='leaseStart',
+              type='date',
+              value=leaseStart)
+        div.form-group
+          label.col-sm-4 Lease End Date
+          div.col-sm-8
+            input.form-control(placeholder='e.g. 01/01/000',
+              required=true,
+              name='leaseEnd',
+              type='date',
+              value=leaseEnd)
+        div.form-group
+          label.col-sm-4 Type of Lease
+          div.col-sm-8
+            .btn-group.btn-group-justified(role='group', aria-label='Type of Lease')
+            .btn-group(role='group')
+              button.btn.btn-default(type='button') Gross Lease
+            .btn-group(role='group')
+              button.btn.btn-default(type='button') Triple Net Lease
+            .btn-group(role='group')
+              button.btn.btn-default(type='button') Modified Gross Lease
+        div.form-group
+          label.col-sm-4 Base Rent
+          div.col-sm-8
+            input.form-control(placeholder='Base Rent',
+              required=true,
+              name='baseRent',
+              type='number',
+              value=baseRent)
+        div.form-group
+          label.col-sm-4 Common Area Maintenance
+          div.col-sm-8
+            input.form-control(placeholder='Common Area Maintenance',
+              required=true,
+              name='commonAreaMaint',
+              type='number',
+              value=commonAreaMaint)
+        div.form-group
+          label.col-sm-4 Insurance
+          div.col-sm-8
+            input.form-control(placeholder='Insurance',
+              required=true,
+              name='insurance',
+              type='number',
+              value=insurance)
+        div.form-group
+          label.col-sm-4 Taxes
+          div.col-sm-8
+            input.form-control(placeholder='Taxes',
+              required=true,
+              name='Taxes',
+              type='number',
+              value=taxes)
+        div.form-group
+          div.col-sm-offset-4.col-sm-8
+            button.login.btn.btn-primary(type='submit') Save
+        div.pull-right
+          a(href="/") Return to home page
