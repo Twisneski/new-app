@@ -47,10 +47,30 @@ const Tenant = sequelize.define('tenant'), {
   baseRent: Sequelize.DECIMAL,
   commonAreaMaintenance: Sequelize.DECIMAL,
   insurance: Sequelize.DECIMAL,
+  taxes: Sequelize.DECIMAL,
+  janitorial: Sequelize.DECIMAL,
+  grounds: Sequelize.DECIMAL,
+  electric: Sequelize.DECIMAL,
+  gas: Sequelize.DECIMAL,
+  water: Sequelize.DECIMAL,
+  leasehold: Sequelize.DECIMAL,
+  security: Sequelize.DECIMAL,
+  snow: Sequelize.DECIMAL,
+  mgtFee: Sequelize.DECIMAL,
+  plumbing: Sequelize.DECIMAL,
+  trash: Sequelize.DECIMAL,
+  elevator: Sequelize.DECIMAL,
+  hvac: Sequelize.DECIMAL,
+  supplies: Sequelize.DECIMAL,
+  fireAlarm: Sequelize.DECIMAL,
+  insurance: Sequelize.DECIMAL,
   taxes: Sequelize.DECIMAL
 }
 
 Tenant.belongsTo(Unit);
+
+
+
 
 
 
