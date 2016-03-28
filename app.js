@@ -15,6 +15,8 @@ const Building = sequelize.define('building'), {
   buildingSqFt: Sequelize.INTEGER
 }
 
+Building.sync()
+
 const Unit = sequelize.define('unit'), {
   unitId: {
     type: Sequelize.INTEGER,
@@ -30,6 +32,8 @@ const Unit = sequelize.define('unit'), {
 };
 
 Unit.belongsTo(Building);
+
+Unit.sync();
 
 const Tenant = sequelize.define('tenant'), {
   tenantId: {
@@ -68,6 +72,10 @@ const Tenant = sequelize.define('tenant'), {
 }
 
 Tenant.belongsTo(Unit);
+
+Tenant.sync();
+
+
 
 
 
