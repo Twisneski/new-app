@@ -3,7 +3,7 @@
 var express = require('express');
 var stormpath = require('express-stormpath');
 var app = express();
-
+var db = require('./models/');
 
 app.set('views', './views');
 app.set('view engine', 'jade');
@@ -39,6 +39,10 @@ app.get('/report', (req, res) => {
 });
 
 app.use('/newLease',stormpath.loginRequired,require('./newLease')());
+
+db.sequelize.sync().then(() => {
+  console.log('DB connected');
+});
 
 app.on('stormpath.ready',function(){
   console.log('Stormpath Ready');

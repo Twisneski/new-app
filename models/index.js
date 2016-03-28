@@ -3,22 +3,8 @@
 var fs        = require("fs");
 var path      = require("path");
 var Sequelize = require("sequelize");
-var sequelize = new Sequelize(process.env.POSTGRESQL_LOCAL_DB, "", "", {
-    host: process.env.POSTGRESQL_LOCAL_HOST,
-    dialect: 'postgres',
-    dialectOptions: {
-        ssl: true
-    },
-    define: {
-        timestamps: false
-    },
-    freezeTableName: true,
-    pool: {
-        max: 9,
-        min: 0,
-        idle: 10000
-    }
-});
+var POSTGRES_URL = process.env.POSTGRES_URL || "postgres://localhost:5432/leasedb"
+var sequelize = new Sequelize(POSTGRES_URL);
 
 var db = {};
 
