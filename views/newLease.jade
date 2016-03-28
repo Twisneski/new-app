@@ -19,7 +19,7 @@ html
         div.alert.alert-success
           span Your new Lease has been saved
       form.login-form.form-horizontal(method='post', role='form')
-        input(name='_csrf', type='hidden', value=csrfToken)
+        //- input(name='_csrf', value=csrfToken)
 
         div.form-group
           label.col-sm-4 Building Number
@@ -117,7 +117,7 @@ html
             input.form-control(placeholder='Tenant Name',
               required=true,
               name='tenantName',
-              type='number',
+              type='text',
               value=tenantName)
         div.form-group
           label.col-sm-4 Lease Id

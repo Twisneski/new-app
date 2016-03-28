@@ -14,6 +14,7 @@ app.use(stormpath.init(app, {
   }
 }));
 
+
 app.get('/', stormpath.getUser, (req, res) => {
   res.render('home', {
     title: 'Welcome'
@@ -38,7 +39,12 @@ app.get('/report', (req, res) => {
   });
 });
 
-app.use('/newLease',stormpath.loginRequired,require('./newLease')());
+// app.use('/newLease',stormpath.loginRequired,require('./newLease')());
+app.get('/newLease', (req,res) => {
+  res.render('newLease', {
+    title: 'New Lease'
+  });
+});
 
 db.sequelize.sync().then(() => {
   console.log('DB connected');

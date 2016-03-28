@@ -13,8 +13,9 @@ html
             //- a.small(href="profile") Edit my profile
           form(action='/logout', method='POST')
             button.btn.btn-default(type="submit") Logout
+            input(name='_csrf', type='hidden', value=csrfToken)
           div.btn-toolbar(role='toolbar', aria-label='selectPage') Select Page
-          form(action='/newLease', method='POST')
+          form(action='/newLease', method='GET')
             button.btn-group(role='group', aria-label='newLease') New Lease
           form(action='/report', method='GET')
             button.btn-group(role='group', aria-label='report') Reports
