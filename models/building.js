@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function(sequelize, DataTypes) {
-  const Building = sequelize.define('building', {
+  const building = sequelize.define('building', {
   buildingId: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -12,11 +12,21 @@ module.exports = function(sequelize, DataTypes) {
   project: DataTypes.STRING,
   buildingSqFt: DataTypes.INTEGER
   }, {
-    tableName: 'Building',
+    //tableName: 'Building',
     timestamps: false,
+    classMethods: {
+      associate: function(models) {
+        building.hasMany(models.unit, {
+          foreignKey: 'buildingId'
+        });
+      }
+    }
+
   });
-  return Building;
+  return building;
 };//end of module exports
 
 
 
+// #F5C92E
+// #253F93

@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function(sequelize, DataTypes) {
-  const Tenant = sequelize.define('tenant', {
+  const tenant = sequelize.define('tenant', {
   tenantId: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -36,17 +36,10 @@ module.exports = function(sequelize, DataTypes) {
   insurance: DataTypes.DECIMAL,
   taxes: DataTypes.DECIMAL
   }, {
-    tableName: 'Tenant',
-    timestamps: false,
-    classMethods: {
-      associate: function(models) {
-        Tenant.belongsTo(models.unit, {
-          foreignKey: 'TenantId'
-        });
-      }
-    }
+    tableName: 'tenant',
+    timestamps: false
   })
-  return Tenant;
+  return tenant;
 };
 
 

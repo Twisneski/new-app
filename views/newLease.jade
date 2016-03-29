@@ -18,7 +18,7 @@ html
       if saved
         div.alert.alert-success
           span Your new Lease has been saved
-      form.login-form.form-horizontal(method='post', role='form')
+      form.login-form.form-horizontal(method='post', role='form', action="/newLease")
         //- input(name='_csrf', value=csrfToken)
 
         div.form-group
@@ -52,7 +52,7 @@ html
           div.col-sm-8
             input.form-control(placeholder='Unit',
               required=true,
-              name='Unit',
+              name='unit',
               type='text',
               value=unit)
         div.form-group
@@ -60,17 +60,17 @@ html
           div.col-sm-8
             input.form-control(placeholder='e.g. 500',
               required=true,
-              name='unitSqFoot',
+              name='unitSqFt',
               type='number',
-              value=unitSqFoot)
+              value=unitSqFt)
         div.form-group
           label.col-sm-4 Building Square Footage
           div.col-sm-8
             input.form-control(placeholder='e.g. 10000',
               required=true,
-              name='buildingSqFoot',
+              name='buildingSqFt',
               type='number',
-              value=buildingSqFoot)
+              value=buildingSqFt)
         div.form-group
           label.col-sm-4 Unit address
           div.col-sm-8
@@ -124,51 +124,49 @@ html
           div.col-sm-8
             input.form-control(placeholder='Lease Id',
               required=true,
-              name='LeaseId',
+              name='leaseId',
               type='number',
-              value=LeaseId)
+              value=leaseId)
         div.form-group
           label.col-sm-4 Move In Date
           div.col-sm-8
             input.form-control(placeholder='e.g. 01/01/000',
               required=true,
-              name='moveIn',
+              name='moveInDate',
               type='date',
-              value=moveIn)
+              value=moveInDate)
         div.form-group
           label.col-sm-4 Move Out Date
           div.col-sm-8
             input.form-control(placeholder='e.g. 01/01/000',
               required=true,
-              name='moveOut',
+              name='moveOutDate',
               type='date',
-              value=moveOut)
+              value=moveOutDate)
         div.form-group
           label.col-sm-4 Lease Start Date
           div.col-sm-8
             input.form-control(placeholder='e.g. 01/01/000',
               required=true,
-              name='leaseStart',
+              name='leaseStartDate',
               type='date',
-              value=leaseStart)
+              value=leaseStartDate)
         div.form-group
           label.col-sm-4 Lease End Date
           div.col-sm-8
             input.form-control(placeholder='e.g. 01/01/000',
               required=true,
-              name='leaseEnd',
+              name='leaseEndDate',
               type='date',
-              value=leaseEnd)
+              value=leaseEndDate)
         div.form-group
           label.col-sm-4 Type of Lease
           div.col-sm-8
-            .btn-group.btn-group-justified(role='group', aria-label='Type of Lease')
-            .btn-group(role='group')
-              button.btn.btn-default(type='button') Gross Lease
-            .btn-group(role='group')
-              button.btn.btn-default(type='button') Triple Net Lease
-            .btn-group(role='group')
-              button.btn.btn-default(type='button') Modified Gross Lease
+            input.form-control(placeholder='e.g. Gross Lease, Triple Net (NNN) or Modified Gross',
+              required=true,
+              name='typeOfLease',
+              type='text',
+              value=typeOfLease)
         div.form-group
           label.col-sm-4 Base Rent
           div.col-sm-8
@@ -182,9 +180,9 @@ html
           div.col-sm-8
             input.form-control(placeholder='Common Area Maintenance',
               required=true,
-              name='commonAreaMaint',
+              name='commonAreaMaintenance',
               type='number',
-              value=commonAreaMaint)
+              value=commonAreaMaintenance)
         div.form-group
           label.col-sm-4 Insurance
           div.col-sm-8
@@ -198,7 +196,7 @@ html
           div.col-sm-8
             input.form-control(placeholder='Taxes',
               required=true,
-              name='Taxes',
+              name='taxes',
               type='number',
               value=taxes)
         div.form-group

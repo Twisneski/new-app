@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function(sequelize, DataTypes) {
-  const Unit = sequelize.define('unit', {
+  const unit = sequelize.define('unit', {
   unitId: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -14,17 +14,17 @@ module.exports = function(sequelize, DataTypes) {
   state: DataTypes.STRING,
   zip: DataTypes.INTEGER
 }, {
-    tableName: 'Unit',
+    tableName: 'unit',
     timestamps: false,
     classMethods: {
       associate: function(models) {
-        Unit.belongsTo(models.building, {
-          foreignKey: 'UnitId'
+        unit.hasMany(models.tenant, {
+         foreignKey: 'unitId'
         });
       }
     }
   })
-  return Unit;
+  return unit;
 };
 
 
