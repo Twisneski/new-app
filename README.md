@@ -12,14 +12,14 @@ Node.js, Express, Stormpath, MySql, Sequelize
 
 ###Installation
 
-```git clone https://github.com/Twisneski/new-app.git
+    git clone https://github.com/Twisneski/new-app.git
 
 Run the following command to install all dependencies:
 
-```npm install
+    npm install
 
 Start your regular Node server with this Terminal command:
 
-```npm run start
+    npm run start
 
 Now open your browser and go to http://localhost:3000/ to see and use the app!
