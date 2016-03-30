@@ -2,26 +2,175 @@ html
   head
     title=title
     link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet')
+    link(rel='stylesheet', type='text/css', href='styles/styles.css')
   body
     div.container
       div.page-header
         h1 Budget Vs. Actual
-          div
-            .row
-              .col-sm-3 .col-sm-6
-              | Building Name
-              .col-sm-6 .col-sm-3
-              |  Budget
-              .col-sm-3 .col-sm-3
-              | Actual
-          div
-            .row
-              .col-sm-3 .col-sm-6
-              | **injection spot**
-              .col-sm-6 .col-sm-3
-              | **injection spot**
-              .col-sm-3 .col-sm-3
-              | **injection spot**
+        .row
+          .col-sm-3
+            | Building Name
+          .col-sm-3
+            | Expense Name
+          .col-sm-3
+            | Budget Expenses
+          .col-sm-3
+            | Actual Expense
+        .row
+          .col-sm-3
+            | #{building.buildingName}
+          .col-sm-3
+            | Janitorial
+          .col-sm-3
+            | #{budget.janitorial}
+          .col-sm-3
+            | #{actual.janitorial}
+        .row
+          .col-sm-3
+            | #{building.buildingName}
+          .col-sm-3
+            | Grounds Maintenance
+          .col-sm-3
+            | #{budget.grounds}
+          .col-sm-3
+            | #{actual.grounds}
+        .row
+          .col-sm-3
+            | #{building.buildingName}
+          .col-sm-3
+            | Electrical
+          .col-sm-3
+            | #{budget.electric}
+          .col-sm-3
+            | #{actual.electric}
+        .row
+          .col-sm-3
+            | #{building.buildingName}
+          .col-sm-3
+            | Utility - Gas
+          .col-sm-3
+            | #{budget.gas}
+          .col-sm-3
+            | #{actual.gas}
+        .row
+          .col-sm-3
+            | #{building.buildingName}
+          .col-sm-3
+            | Utility - Water
+          .col-sm-3
+            | #{budget.water}
+          .col-sm-3
+            | #{actual.water}
+        .row
+          .col-sm-3
+            | #{building.buildingName}
+          .col-sm-3
+            | Leasehold Improvements
+          .col-sm-3
+            | #{budget.leasehold}
+          .col-sm-3
+            | #{actual.leasehold}
+        .row
+          .col-sm-3
+            | #{building.buildingName}
+          .col-sm-3
+            | Security
+          .col-sm-3
+            | #{budget.security}
+          .col-sm-3
+            | #{actual.security}
+        .row
+          .col-sm-3
+            | #{building.buildingName}
+          .col-sm-3
+            | Snow Removal
+          .col-sm-3
+            | #{budget.snow}
+          .col-sm-3
+            | #{actual.snow}
+        .row
+          .col-sm-3
+            | #{building.buildingName}
+          .col-sm-3
+            | Management Fee
+          .col-sm-3
+            | #{budget.mgtFee}
+          .col-sm-3
+            | #{actual.mgtFee}
+        .row
+          .col-sm-3
+            | #{building.buildingName}
+          .col-sm-3
+            | Plumbing
+          .col-sm-3
+            | #{budget.plumbing}
+          .col-sm-3
+            | #{actual.plumbing}
+        .row
+          .col-sm-3
+            | #{building.buildingName}
+          .col-sm-3
+            | Trash
+          .col-sm-3
+            | #{budget.trash}
+          .col-sm-3
+            | #{actual.trash}
+        .row
+          .col-sm-3
+            | #{building.buildingName}
+          .col-sm-3
+            | Elevator
+          .col-sm-3
+            | #{budget.elevator}
+          .col-sm-3
+            | #{actual.elevator}
+        .row
+          .col-sm-3
+            | #{building.buildingName}
+          .col-sm-3
+            | HVAC
+          .col-sm-3
+            | #{budget.hvac}
+          .col-sm-3
+            | #{actual.hvac}
+        .row
+          .col-sm-3
+            | #{building.buildingName}
+          .col-sm-3
+            | Supplies
+          .col-sm-3
+            | #{budget.supplies}
+          .col-sm-3
+            | #{actual.supplies}
+        .row
+          .col-sm-3
+            | #{building.buildingName}
+          .col-sm-3
+            | Fire Alarm
+          .col-sm-3
+            | #{budget.fireAlarm}
+          .col-sm-3
+            | #{actual.fireAlarm}
+        .row
+          .col-sm-3
+            | #{building.buildingName}
+          .col-sm-3
+            | Insurance
+          .col-sm-3
+            | #{budget.insurance}
+          .col-sm-3
+            | #{actual.insurance}
+        .row
+          .col-sm-3
+            | #{building.buildingName}
+          .col-sm-3
+            | Taxes
+          .col-sm-3
+            | #{budget.taxes}
+          .col-sm-3
+            | #{actual.taxes}
+
+
 
       div.form-group
         div.col-sm-offset-4.col-sm-8

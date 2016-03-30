@@ -19,9 +19,11 @@ module.exports = function(sequelize, DataTypes) {
         building.hasMany(models.unit, {
           foreignKey: 'buildingId'
         });
+        building.hasMany(models.expenses, {
+          foreignKey: 'buildingId'
+        });
       }
     }
-
   });
   return building;
 };//end of module exports

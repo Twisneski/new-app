@@ -72,34 +72,71 @@ app.post('/newLease', (req, res) => {
 //***THIS IS TO POST ACTUAL DATA FORM - this info goes to tenant table
 app.post('/actual', (req, res) => {
   console.log(req.body);
-  db.tenant.create(req.body)
-    .then( (savedTenant) => {
-    console.log('saved budget actual info', savedBudget)
-    req.body.tenantId = savedTenant.id;
-        db.building.create(req.body)
-        .then ( ( savedBuilding) => {
-          console.log('saved building info', savedBuilding)
-          req.body.buildingId = savedBuilding.id;
-        })
-    });
+  db.expenses.create(req.body)
+    .then( (savedExpense) => {
+    console.log('saved actual info', savedExpense)
   res.redirect('/actual');
+  });
 });//end of post function
 
 //***THIS IS TO POST BUDGET DATA FORM - this info goes to tenant table
 app.post('/budget', (req, res) => {
   console.log(req.body);
-  db.tenant.create(req.body)
-    .then( (savedBudget) => {
-    console.log('saved budget info', savedActual)
-    req.body.tenantId = savedTenant.id;
-      db.building.create(req.body)
-        .then ( ( savedBuilding) => {
-          console.log('saved building info', savedBuilding)
-          req.body.buildingId = savedBuilding.id;
-      })
-    });
+  db.expenses.create(req.body)
+    .then( (savedExpense) => {
+    console.log('saved budget info', savedExpense)
   res.redirect('/budget');
+  });
 });//end of post function
+
+//****PULL BUDGET AND ACTUAL INFO FOR REPORT**
+app.get('/budgetVactual', (req, res) => {
+    db.expenses.findOne({where: {type: 'budget'}})
+      .then( (savedBudget) => {
+        console.log('saved budget info', savedBudget.dataValues)
+        db.expenses.findOne({where: {type: 'actual'}})
+        .then( (savedActual) => {
+          console.log('------>', savedActual)
+          console.log('saved actual info', savedActual.dataValues)
+          db.building.findOne({where: {buildingNumber: savedActual.buildingNumber}})
+          .then( (savedBuilding) => {
+            console.log('saved building info', savedBuilding.dataValues)
+            res.render('budgetVactual', {
+              budget: savedBudget.dataValues,
+              actual: savedActual.dataValues,
+              building: savedBuilding.dataValues
+            });
+          })
+        })
+    });
+});
+//***Edit budgetVactual Info on new report**
+//populate another FORM to be edited - value would actual.fieldname or budget.fieldname
+//similar to create
+//add method override to delete or put
+//create a new form for each actual  and budget
+// app.put('budgetVactual', (req, res) => {
+//   db.budget.find({} => {
+//   })
+//   res.render('new-budgetVactual', {
+//     budget: req.budget
+//   })
+// })
+
+//***Update budgetVactual Info on report**
+// app.put('budgetVactual', (req, res) => {
+//   req.budget.remove({} => {
+//   })
+//   res.render('new-budgetVactual')
+// })
+
+//***Delete budgetVactual Info on report**
+// app.delete('budgetVactual', (req, res) => {
+//   req.budget.remove({} => {
+//   })
+//   res.render('new-budgetVactual')
+// })
+
 
 db.sequelize.sync().then(() => {
   console.log('DB connected');
@@ -111,4 +148,4 @@ app.on('stormpath.ready',function(){
 app.listen(3000);
 
 
-// app.get to retrieve db info before res.render of page
+
